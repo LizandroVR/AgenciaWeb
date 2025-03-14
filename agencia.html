@@ -87,6 +87,11 @@
             background-color: #333;
             color: white;
         }
+
+        .footer a {
+            color: #4fa3ff;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -100,30 +105,35 @@
 
     <div class="footer">
         <p>📧 Contacto: info@autoslujo.com | 📞 Tel: +52 123 456 7890</p>
-        <p>🌐 Síguenos en <a href="#" style="color: #4fa3ff; text-decoration: none;">Facebook</a> | <a href="#" style="color: #4fa3ff; text-decoration: none;">Instagram</a></p>
+        <p>🌐 Síguenos en 
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </p>
     </div>
 
     <script>
-        const cars = [
-            { name: "Ford Mustang", price: "$55,000", image: "https://source.unsplash.com/300x200/?mustang" },
-            { name: "Chevrolet Camaro", price: "$50,000", image: "https://source.unsplash.com/300x200/?camaro" },
-            { name: "Tesla Model S", price: "$80,000", image: "https://source.unsplash.com/300x200/?tesla" },
-            { name: "BMW M3", price: "$70,000", image: "https://source.unsplash.com/300x200/?bmw" },
-            { name: "Audi R8", price: "$120,000", image: "https://source.unsplash.com/300x200/?audi-r8" },
-            { name: "Lamborghini Huracán", price: "$230,000", image: "https://source.unsplash.com/300x200/?lamborghini" }
-        ];
+        document.addEventListener("DOMContentLoaded", function() {
+            const cars = [
+                { name: "Ford Mustang", price: "$55,000", image: "https://upload.wikimedia.org/wikipedia/commons/2/23/2018_Ford_Mustang_GT_5.0.jpg" },
+                { name: "Chevrolet Camaro", price: "$50,000", image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/2019_Chevrolet_Camaro_RS.jpg" },
+                { name: "Tesla Model S", price: "$80,000", image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tesla_Model_S_Plaid_red_%28cropped%29.jpg" },
+                { name: "BMW M3", price: "$70,000", image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/BMW_M3_%28F80%29%2C_Paris_Motor_Show_2018%2C_IMG_0672.jpg" },
+                { name: "Audi R8", price: "$120,000", image: "https://upload.wikimedia.org/wikipedia/commons/6/60/2017_Audi_R8_V10_S%26W_4801.jpg" },
+                { name: "Lamborghini Huracán", price: "$230,000", image: "https://upload.wikimedia.org/wikipedia/commons/1/15/2019_Lamborghini_Huracan_Evo_5.2.jpg" }
+            ];
 
-        const carList = document.getElementById("carList");
-        cars.forEach(car => {
-            const carElement = document.createElement("div");
-            carElement.classList.add("car");
-            carElement.innerHTML = `
-                <img src="${car.image}" alt="${car.name}">
-                <h3>${car.name}</h3>
-                <p>Precio: ${car.price}</p>
-                <a href="#" class="btn">Más información</a>
-            `;
-            carList.appendChild(carElement);
+            const carList = document.getElementById("carList");
+            cars.forEach(car => {
+                const carElement = document.createElement("div");
+                carElement.classList.add("car");
+                carElement.innerHTML = `
+                    <img src="${car.image}" alt="${car.name}">
+                    <h3>${car.name}</h3>
+                    <p>Precio: ${car.price}</p>
+                    <a href="#" class="btn">Más información</a>
+                `;
+                carList.appendChild(carElement);
+            });
         });
     </script>
 
