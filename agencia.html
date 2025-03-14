@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Autos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .car-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .car {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .car:hover {
+            transform: scale(1.05);
+        }
+
+        .car img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .car h3 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+        }
+
+        .car p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 8px 12px;
+            margin-top: 8px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">🚗 Catálogo de Autos 🚘</div>
+
+    <div class="container">
+        <h2>Explora nuestra selección de autos de lujo</h2>
+        <div class="car-list" id="carList"></div>
+    </div>
+
+    <div class="footer">
+        <p>📧 Contacto: info@autoslujo.com | 📞 Tel: +52 123 456 7890</p>
+        <p>🌐 Síguenos en <a href="#" style="color: #4fa3ff; text-decoration: none;">Facebook</a> | <a href="#" style="color: #4fa3ff; text-decoration: none;">Instagram</a></p>
+    </div>
+
+    <script>
+        const cars = [
+            { name: "Ford Mustang", price: "$55,000", image: "https://source.unsplash.com/300x200/?mustang" },
+            { name: "Chevrolet Camaro", price: "$50,000", image: "https://source.unsplash.com/300x200/?camaro" },
+            { name: "Tesla Model S", price: "$80,000", image: "https://source.unsplash.com/300x200/?tesla" },
+            { name: "BMW M3", price: "$70,000", image: "https://source.unsplash.com/300x200/?bmw" },
+            { name: "Audi R8", price: "$120,000", image: "https://source.unsplash.com/300x200/?audi-r8" },
+            { name: "Lamborghini Huracán", price: "$230,000", image: "https://source.unsplash.com/300x200/?lamborghini" }
+        ];
+
+        const carList = document.getElementById("carList");
+        cars.forEach(car => {
+            const carElement = document.createElement("div");
+            carElement.classList.add("car");
+            carElement.innerHTML = `
+                <img src="${car.image}" alt="${car.name}">
+                <h3>${car.name}</h3>
+                <p>Precio: ${car.price}</p>
+                <a href="#" class="btn">Más información</a>
+            `;
+            carList.appendChild(carElement);
+        });
+    </script>
+
+</body>
+</html>
